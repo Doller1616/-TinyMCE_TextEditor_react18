@@ -20,24 +20,21 @@ export default function App() {
         initialValue={value}
         onChange={setValue}
         init={{
-          height: 800,
-          // menubar: false,
-          selector:'textarea',
-          font_formats: "Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Oswald=oswald; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats",
-          plugins: [
-            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
-            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-            'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
-          ],
-          toolbar: 'undo redo | blocks | fontselect ' +
-            'bold italic forecolor | alignleft aligncenter ' +
-            'alignright alignjustify | bullist numlist outdent indent | ' +
-            'removeformat | help' + 
-            'link image',
           content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+          selector: '.textEditor',
+          plugins: `advlist insertdatetime lists table paste textcolor colorpicker tabfocus link preview autolink image charmap anchor searchreplace visualblocks code fullscreen insertdatetime media help wordcount`,
+          toolbar: `undo redo table fontsizeselect bold italic underline forecolor backcolor bullist numlist link blocks charmap fontselect alignleft aligncenter alignright alignjustify outdent indent removeformat image media code insertdatetime preview`, 
+          imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage",
           paste_data_images: true,
-          plugins: 'image code',
-          height: 400
+          // menubar: false,
+          toolbar_items_size: 'large',
+          min_height: 500,
+          max_height: 800,
+          convert_newlines_to_brs: false,
+          statusbar: false,
+          relative_urls: false,
+          remove_script_host: false,
+          language: 'en',
         }}
       />
       <button onClick={log}>Log content HTML</button>
